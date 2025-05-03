@@ -29,7 +29,10 @@ func main() {
 	// สร้าง router
 	r := gin.Default()
 	r.Use(cors.New(cors.Config{
-		AllowOrigins:     []string{"http://localhost:5173", "https://ezclinic-demo.vercel.app"},
+		AllowOrigins: []string{
+			"http://localhost:5173",             // dev
+			"https://ezclinic-demo.netlify.app", // เพิ่ม Netlify URL
+		},
 		AllowMethods:     []string{"GET", "POST", "PUT", "DELETE", "OPTIONS"},
 		AllowHeaders:     []string{"Origin", "Content-Type", "Authorization"},
 		ExposeHeaders:    []string{"Content-Length"},
